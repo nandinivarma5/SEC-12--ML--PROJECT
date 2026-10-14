@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diabetes Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Diabetes Risk Prediction</h1>
+    <p>Logistic Regression and Random Forest with Cross-Validation &middot; Pima Indians Diabetes Dataset</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Patient Details</h2>
+      <form id="predict-form" novalidate>
+        <div class="grid" id="fields"></div>
+        <label class="model-row">Model
+          <select id="model">
+            <option value="random_forest">Random Forest</option>
+            <option value="logistic_regression">Logistic Regression</option>
+          </select>
+        </label>
+        <div class="actions">
+          <button type="submit" id="predict-btn">Predict</button>
+          <button type="button" id="sample-btn" class="secondary">Fill sample data</button>
+        </div>
+      </form>
+      <div id="error" class="error" hidden></div>
+      <div id="result" class="result" hidden>
+        <div id="result-label"></div>
+        <div class="bar"><div id="result-bar"></div></div>
+        <small id="result-detail"></small>
+      </div>
+      <p class="note">For academic demonstration only. Not a substitute for professional medical diagnosis.</p>
+    </section>
+
+    <section class="card">
+      <h2>Model Performance (test set)</h2>
+      <div class="scroll"><table id="metrics-table"></table></div>
+    </section>
+
+    <section class="card wide">
+      <div class="head-row">
+        <h2>Prediction History</h2>
+        <button id="clear-btn" class="secondary" type="button">Clear history</button>
+      </div>
+      <div class="scroll"><table id="history-table"></table></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

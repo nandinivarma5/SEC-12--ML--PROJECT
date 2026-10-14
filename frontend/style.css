@@ -1,0 +1,34 @@
+:root { --dark:#0b3c49; --teal:#1b7f8c; --coral:#e8604c; --bg:#eaf5f7; --ink:#1f2d33; --mute:#5b6b72; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Calibri, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+header { background:var(--dark); color:#fff; padding:28px 24px; text-align:center; }
+header h1 { margin:0 0 6px; font-family: Cambria, Georgia, serif; }
+header p { margin:0; color:#9fd6de; }
+main { max-width:1000px; margin:24px auto; padding:0 16px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.card { background:#fff; border-radius:10px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+.wide { grid-column:1 / -1; }
+h2 { margin:0 0 14px; font-family: Cambria, Georgia, serif; color:var(--dark); font-size:20px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+label { display:flex; flex-direction:column; font-size:13px; color:var(--mute); gap:4px; }
+input, select { padding:8px; border:1px solid #c9d8dc; border-radius:6px; font-size:15px; }
+.model-row { margin-top:14px; }
+.actions { display:flex; gap:10px; margin-top:16px; }
+button { background:var(--teal); color:#fff; border:0; padding:10px 18px; border-radius:6px; font-size:15px; cursor:pointer; }
+button:hover { opacity:.9; }
+button.secondary { background:#fff; color:var(--teal); border:1px solid var(--teal); }
+.error { margin-top:14px; padding:10px; border-radius:6px; background:#fdeeeb; color:#b0372a; }
+.result { margin-top:16px; padding:14px; border-radius:8px; background:#f4fafb; }
+#result-label { font-size:20px; font-weight:bold; margin-bottom:8px; }
+.bar { height:12px; background:#dde8eb; border-radius:6px; overflow:hidden; }
+.bar div { height:100%; width:0; background:var(--teal); transition:width .4s; }
+.result.high #result-label { color:var(--coral); } .result.high .bar div { background:var(--coral); }
+.result.low #result-label { color:var(--teal); }
+.note { font-size:12px; color:var(--mute); font-style:italic; margin:14px 0 0; }
+.head-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.head-row h2 { margin:0; }
+.scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { background:var(--dark); color:#fff; text-align:left; padding:8px; white-space:nowrap; }
+td { padding:7px 8px; border-bottom:1px solid #e3ecef; white-space:nowrap; }
+.empty { color:var(--mute); padding:10px 0; }
+@media (max-width:760px) { main { grid-template-columns:1fr; } }
